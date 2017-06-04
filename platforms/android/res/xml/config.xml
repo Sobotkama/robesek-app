@@ -11,6 +11,7 @@
     <author email="sobotkama@sobotkama.eu" href="http://sobotkama.eu">
         Martin Sobotka
     </author>
+    <icon src="res/icon.png" />
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

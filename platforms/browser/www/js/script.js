@@ -1,6 +1,7 @@
 //
 // MJPEG
 //
+var ip = "192.168.104.143"
 var mjpeg_img;
 var halted = 0;
 var previous_halted = 99;
@@ -8,34 +9,15 @@ var mjpeg_mode = 0;
 var preview_delay = 0;
 
 function reload_img () {
-  if(!halted) mjpeg_img.src = "http://192.168.104.143/cam.jpg?" + new Date().getTime();
+  if(!halted) mjpeg_img.src = "http://" + ip + "/cam.jpg?" + new Date().getTime();
   else setTimeout("reload_img()", 500);
 }
 
 function error_img () {
-  setTimeout("mjpeg_img.src = 'http://192.168.104.143/cam.jpg?time=' + new Date().getTime();", 100);
+  setTimeout("mjpeg_img.src = 'http://' + ip + '/cam.jpg?time=' + new Date().getTime();", 100);
 }
 
-function updatePreview(cycle)
-{
-   if (mjpegmode)
-   {
-      if (cycle !== undefined && cycle == true)
-      {
-         setTimeout("mjpeg_img.src = \"http://192.168.104.143/cam.jpg?time=\" + new Date().getTime();", 1000);
-         return;
-      }
-      
-      if (previous_halted != halted)
-      {
-         if(!halted)
-         {
-	     mjpeg_img.src = "http://192.168.104.143/cam.jpg?time=" + new Date().getTime() ;
-	}
-      }
-	previous_halted = halted;
-   }
-}
+
 
 function createnipple() {
     var joystickL = nipplejs.create({
