@@ -8,8 +8,17 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body onload="setTimeout('init();', 100);">
-        
-            <img id="mjpeg_dest" class="make-it-fit" src="http://192.168.104.143/cam.jpg">
-	
+        <img id="mjpeg_dest" class="make-it-fit" src="http://192.168.104.143/cam.jpg">
+	<div id="left"></div>
+	<div id="right">Tellemetry goes here, hopefully</div>
+	<script src="dist/nipplejs.js" charset="utf-8"></script>
+        <script>
+            var joystickL = nipplejs.create({
+                zone: document.getElementById('left'),
+                mode: 'dynamic',
+                color: 'red',
+                size: 80
+            });
+        </script>
     </body>
 </html>
