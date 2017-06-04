@@ -34,3 +34,10 @@ html, body {
             width: 50%;
             
         }
+#settings {
+	position: absolute;
+	right: 2.5%;
+	top: 2.5%;
+	height: 10%;
+	width: 10%;
+}
