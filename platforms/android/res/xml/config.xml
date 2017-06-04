@@ -6,10 +6,10 @@
     </feature>
     <name>robesek</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        A simple remote control and camera view app.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="sobotkama@sobotkama.eu" href="http://sobotkama.eu">
+        Martin Sobotka
     </author>
     <content src="index.html" />
     <access origin="*" />

@@ -37,10 +37,21 @@ function updatePreview(cycle)
    }
 }
 
+function createnipple() {
+    var joystickL = nipplejs.create({
+        zone: document.getElementById('left'),
+        mode: 'dynamic',
+        color: 'red',
+        size: 80
+    });
+}
+
+
 //
 // Init
 //
 function init(mjpeg, video_fps, divider) {
+  createnipple();
   mjpeg = 0;
   video_fps = 25;
   divider = 1
@@ -55,3 +66,5 @@ function init(mjpeg, video_fps, divider) {
      reload_img();
   }
 }
+
+
