@@ -58,7 +58,7 @@ function settwindow() {
 }
 
 function savevars() {
-  ip=document.getElementById("ipbox").value;
+  ip = document.getElementById("ipbox").value;
 }
 
 //

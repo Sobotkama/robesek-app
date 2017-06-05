@@ -92,6 +92,7 @@ body {
   overflow: hidden;
   /* Could be more or less, depending on screen size */
 }
+
 .modal-close {
   width: 100%;
   text-align: right;
@@ -113,12 +114,12 @@ body {
   /* Could be more or less, depending on screen size */
 }
 
+
 /* The Close Button */
 
 .close {
   color: #aaa;
-  right: 5%
-  font-size: 28px;
+  right: 5% font-size: 28px;
   font-weight: bold;
   text-align: right;
 }
@@ -129,6 +130,7 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
 input {
-text-align: center;
+  text-align: center;
 }
