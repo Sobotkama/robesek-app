@@ -6,20 +6,16 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="dist/nipplejs.js" charset="utf-8"></script>
   </head>
-  <body onload="setTimeout('init();', 30);">
-    <img id="mjpeg_dest" class="make-it-fit" src="img/err.png">
+  <body onload="setTimeout('init();', 10);">
+    <img id="mjpeg_dest" src="img/err.png">
     <div id="left" onload="createnipple();"></div>
-    <div id="right">
-      <div id="setimgb">
-        <img id=settings src="img/settings.png" onclick="settwindow()">
-      </div>
-      <div id="cam">
-        <div id="sliders">
-          <input id="vers" type="range" min="50" max="255" >
-            </br>
-          <input id="hors" type="range" min="0" max="255" >
-        </div>
-      </div>
+    <div id="setimgb">
+      <img id=settings src="img/settings.png" onclick="settwindow()">
+    </div>
+    <div id="cam">
+      <input id="hors" type="range" min="0" max="255" > <br/>
+      <input id="vers" type="range" min="50" max="255" >
+      <button id="resetcam">RESET <br/> CAMERA </button>
     </div>
     <div id="modalSettings" class="modal">
     <!-- Modal content -->
@@ -32,7 +28,7 @@
       </div>
       <div class="modal-sets">
         <div id="ip">
-          IP: <input type="text" id="ipbox" value="192.168.104.143"><br>
+          IP: <input type="text" id="ipbox" class="textinput" value="192.168.104.143"><br>
         </div>
         <button id="save" onclick="savevars()">SAVE</button>
       </div>

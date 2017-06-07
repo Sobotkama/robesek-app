@@ -11,8 +11,7 @@ var modal;
 var span;
 
 function reload_img() {
-  if (!halted) mjpeg_img.src = "http://" + ip + "/cam.jpg?" + new Date().getTime();
-  else setTimeout("reload_img()", 500);
+  setTimeout("mjpeg_img.src = 'http://' + ip + '/cam.jpg?' + new Date().getTime();", preview_delay )
 }
 
 function error_img() {
@@ -36,15 +35,10 @@ function createnipple() {
 
 //SETTINGS
 
-// Get the modal
-
-
-// When the user clicks on <span> (x), close the modal
 function spanc() {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -68,18 +62,12 @@ function init() {
   var modal = document.getElementById('modalSettings');
   var span = document.getElementsByClassName("close")[0];
   createnipple();
-  mjpeg = 0;
-  video_fps = 25;
+  video_fps = 7;
   divider = 1
   mjpeg_img = document.getElementById("mjpeg_dest");
-  preview_delay = Math.floor(divider / Math.max(video_fps, 1) * 1000000);
-  if (mjpeg) {
-    mjpegmode = 1;
-  }
-  else {
-    mjpegmode = 0;
-    mjpeg_img.onload = reload_img;
-    mjpeg_img.onerror = error_img;
-    reload_img();
-  }
+  preview_delay = Math.floor(divider / Math.max(video_fps, 1) * 1000);
+  mjpegmode = 0;
+  mjpeg_img.onload = reload_img;
+  mjpeg_img.onerror = error_img;
+  reload_img();
 }
