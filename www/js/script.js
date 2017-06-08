@@ -24,6 +24,11 @@ function error_img() {
 
 //JOYSTICK
 
+function resetcam() {
+  document.getElementById("hors").value="90"
+  document.getElementById("vers").value="110"
+}
+
 function createnipple() {
   var joystickL = nipplejs.create({
     zone: document.getElementById('left'),

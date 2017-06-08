@@ -128,10 +128,12 @@ body {
   display: flex;
   justify-content: right;
   align-items: center;
+  display: -webkit-flex; /* Safari */
+  -webkit-justify-content: flex-end; /* Safari 6.1+ */
 }
 
 #vers {
-    -webkit-appearance: slider-vertical;
+    -webkit-appearance: slider-vertical; 
     width: 4vh;
     height: 40vh;
 }

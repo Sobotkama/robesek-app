@@ -131,7 +131,7 @@ body {
 }
 
 #vers {
-    -webkit-appearance: slider-vertical;
+    -webkit-appearance: slider-vertical; 
     width: 4vh;
     height: 40vh;
 }
