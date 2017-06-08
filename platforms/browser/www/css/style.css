@@ -85,12 +85,13 @@ body {
 }
 
 .modal-close {
-  width: 100%;
   text-align: right;
   font-size: 2em;
 }
 
 .modal-title {
+  top: -2vh;
+  size: 5vh;
   width: 100%;
   text-align: center;
   font-size: 2em;
@@ -128,6 +129,8 @@ body {
   display: flex;
   justify-content: right;
   align-items: center;
+  display: -webkit-flex; /* Safari */
+  -webkit-justify-content: flex-end; /* Safari 6.1+ */
 }
 
 #vers {

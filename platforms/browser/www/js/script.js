@@ -16,6 +16,7 @@ function reload_img() {
 
 function error_img() {
   mjpeg_img.src = 'img/err.png'
+  setTimeout("reload_img()", 1000)
 }
 
 //
@@ -58,6 +59,7 @@ function settwindow() {
 
 function savevars() {
   ip = document.getElementById("ipbox").value;
+  reload_img()
 }
 
 //
@@ -67,7 +69,7 @@ function init() {
   var modal = document.getElementById('modalSettings');
   var span = document.getElementsByClassName("close")[0];
   createnipple();
-  video_fps = 7;
+  video_fps = 15;
   divider = 1
   mjpeg_img = document.getElementById("mjpeg_dest");
   preview_delay = Math.floor(divider / Math.max(video_fps, 1) * 1000);
