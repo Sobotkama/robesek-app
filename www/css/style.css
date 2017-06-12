@@ -125,7 +125,7 @@ body {
 #cam {
   position: absolute;
   bottom: 7%;
-  right: 0;
+  right: 5%;
   display: flex;
   justify-content: right;
   align-items: center;

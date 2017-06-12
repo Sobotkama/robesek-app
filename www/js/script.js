@@ -9,14 +9,27 @@ var mjpeg_mode = 0;
 var preview_delay = 0;
 var modal;
 var span;
-
+var storage = window.localStorage;
+var rtext;
+var error = 0;
 function reload_img() {
-  setTimeout("mjpeg_img.src = 'http://' + ip + '/cam.jpg?' + new Date().getTime();", preview_delay )
+  if (error = 0) {
+    setTimeout("mjpeg_img.src = 'http://' + ip + '/cam.jpg?' + new Date().getTime();", preview_delay )
+    reload_img;
+  }
+}
+
+function unerror() {
+	error = 0
+	reload_img
 }
 
 function error_img() {
-  mjpeg_img.src = 'img/err.png'
-  setTimeout("reload_img()", 1000)
+  if (mjpeg_img.src != 'img/err.png') {
+    mjpeg_img.src = 'img/err.png'
+  }
+  error = 1
+  setTimeout("unerror()", 5000)
 }
 
 //
@@ -53,13 +66,15 @@ window.onclick = function (event) {
 
 
 function settwindow() {
-  console.log("settings")
+  console.log("settings");
   modal.style.display = "block";
 }
 
 function savevars() {
   ip = document.getElementById("ipbox").value;
-  reload_img()
+  reload_img();
+  rtext = document.getElementById("rtextbox").value
+  storage.setItem("rtext", rtext);
 }
 
 //
@@ -68,13 +83,13 @@ function savevars() {
 function init() {
   var modal = document.getElementById('modalSettings');
   var span = document.getElementsByClassName("close")[0];
-  createnipple();
+  //createnipple();
   video_fps = 15;
-  divider = 1
+  divider = 1;
   mjpeg_img = document.getElementById("mjpeg_dest");
   preview_delay = Math.floor(divider / Math.max(video_fps, 1) * 1000);
   mjpegmode = 0;
-  mjpeg_img.onload = reload_img;
   mjpeg_img.onerror = error_img;
   reload_img();
+  rtext = storage.getItem("rtext");
 }
