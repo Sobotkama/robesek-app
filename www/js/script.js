@@ -75,6 +75,17 @@ function savevars() {
   reload_img();
   rtext = document.getElementById("rtextbox").value
   storage.setItem("rtext", rtext);
+  storage.setItem("ip", ip)
+}
+
+function loadVars() {
+	ip = storage.getItem("ip")
+	rtext = storage.getItem("rtext")
+	if (ip != null) {
+	  document.getElementById("ipbox").value = ip
+	}
+	document.getElementById("rtextbox").value = rtext
+	
 }
 
 //
@@ -91,5 +102,5 @@ function init() {
   mjpegmode = 0;
   mjpeg_img.onerror = error_img;
   reload_img();
-  rtext = storage.getItem("rtext");
+  loadVars()
 }
