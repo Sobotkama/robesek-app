@@ -12,16 +12,17 @@ var span;
 var storage = window.localStorage;
 var rtext;
 var error = 0;
+
 function reload_img() {
   if (error = 0) {
-    setTimeout("mjpeg_img.src = 'http://' + ip + '/cam.jpg?' + new Date().getTime();", preview_delay )
+    setTimeout("mjpeg_img.src = 'http://' + ip + '/cam.jpg?' + new Date().getTime();", preview_delay)
     reload_img;
   }
 }
 
 function unerror() {
-	error = 0
-	reload_img
+  error = 0
+  reload_img
 }
 
 function error_img() {
@@ -39,8 +40,8 @@ function error_img() {
 //JOYSTICK
 
 function resetcam() {
-  document.getElementById("hors").value="90"
-  document.getElementById("vers").value="110"
+  document.getElementById("hors").value = "90"
+  document.getElementById("vers").value = "110"
 }
 
 function createnipple() {
