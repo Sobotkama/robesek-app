@@ -74,18 +74,24 @@ function savevars() {
   ip = document.getElementById("ipbox").value;
   reload_img();
   rtext = document.getElementById("rtextbox").value
+  fps = Number(document.getElementById("fps").value)
   storage.setItem("rtext", rtext);
   storage.setItem("ip", ip)
+  storage.setItem("fps", fps)
 }
 
 function loadVars() {
-	ip = storage.getItem("ip")
-	rtext = storage.getItem("rtext")
-	if (ip != null) {
-	  document.getElementById("ipbox").value = ip
-	}
-	document.getElementById("rtextbox").value = rtext
-	
+  ip = storage.getItem("ip")
+  rtext = storage.getItem("rtext")
+  fps = storage.getItem("fps")
+  if (ip != null) {
+    document.getElementById("ipbox").value = ip
+  }
+  if (fps != null) {
+    document.getElementById("fps").value = fps
+    preview_delay = Math.floor(divider / Math.max(video_fps, 1) * 1000)
+  }
+  document.getElementById("rtextbox").value = rtext
 }
 
 //
