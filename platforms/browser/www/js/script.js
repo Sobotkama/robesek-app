@@ -13,11 +13,13 @@ var storage = window.localStorage;
 var rtext;
 var error = 0;
 var fps = 15
+var ws = new WebSocket("ws://" + ip + ":8000/")
+
 
 
 function sendData(data) {
   document.getElementById("debugbox").innerHTML = data
-
+  ws.send(data)  
 } 
 
 function reload_img() {
@@ -106,6 +108,7 @@ function savevars() {
   preview_delay = Math.floor(divider / Math.max(fps, 1) * 1000);
   error = 1
   setTimeout(function(){unerror()},preview_delay)
+  ws = new WebSocket("ws://" + ip + ":8000/")
 }
 
 function loadVars() {
@@ -124,6 +127,7 @@ function loadVars() {
     reload_img()
   }
   document.getElementById("rtextbox").value = rtext
+  ws = new WebSocket("ws://" + ip + ":8000/")
 }
 
 createnipple()
