@@ -139,3 +139,15 @@ body {
   width: 40vh;
   height: 4vh;
 }
+
+#debugbox {
+  position: absolute;
+  top: 7%;
+  right: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+  -webkit-justify-content: flex-end;
+  font-size: 5em;
+}
