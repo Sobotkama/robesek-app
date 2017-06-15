@@ -13,6 +13,7 @@
         "cordova-android": "^6.2.3",
         "cordova-browser": "^4.1.0",
         "cordova-plugin-whitelist": "^1.3.2",
+        "cordova-windows": "^5.0.0",
         "nipplejs": "^0.6.7"
     },
     "cordova": {
@@ -21,7 +22,8 @@
         },
         "platforms": [
             "android",
-            "browser"
+            "browser",
+            "windows"
         ]
     }
 }

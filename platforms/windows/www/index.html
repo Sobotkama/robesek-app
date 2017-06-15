@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>Cameraaa</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="dist/nipplejs.js" charset="utf-8"></script>
+  </head>
+  <body onload="setTimeout('init();', 10);">
+    <img id="mjpeg_dest" src="img/err.png">
+    <div id="left" ></div>
+    <div id="setimgb">
+      <img id=settings src="img/settings.png" onclick="settwindow()">
+    </div>
+    <div id="cam">
+      <input id="hors" type="range" min="0" max="180" oninput="camhor()"> <br/>
+      <input id="vers" type="range" min="40" max="180" oninput="camver()">
+      <button id="resetcam" onclick="resetcam()">RESET <br/> CAMERA </button>
+    </div>
+    <div id="modalSettings" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-close">
+        <div class="modal-title" style="height:50px;">
+          Settings
+        </div>
+        <span class="close" onclick="spanc()">&times;</span>
+      </div>
+      <div class="modal-sets">
+        <div id="ip">
+          IP: <input type="text" id="ipbox" class="textinput" value="192.168.104.143"><br>
+        </div>
+        <div id="fpsdiv">
+          Desired FPS: <input type="text" id="fps" class="textinput" value="15"><br>
+        </div>
+        <div id="testbox">
+          Random text: <input type="text" id="rtextbox" class="textinput" value="Hello World"><br>
+        </div>
+        <button id="save" onclick="savevars()">SAVE</button>
+      </div>
+    </div>
+    <script>
+      var modal = document.getElementById('modalSettings');
+      var span = document.getElementsByClassName("close")[0];
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

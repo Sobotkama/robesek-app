@@ -128,6 +128,8 @@ body {
   -webkit-justify-content: flex-end;
 }
 
+
+
 #vers {
   -webkit-appearance: slider-vertical;
   width: 4vh;
@@ -138,6 +140,7 @@ body {
   -webkit-appearance: slider-horizontal;
   width: 40vh;
   height: 4vh;
+  margin-right: 20px;
 }
 
 #debugbox {
