@@ -18,7 +18,6 @@ var ws = new WebSocket("ws://" + ip + ":8000/")
 
 
 function sendData(data) {
-  document.getElementById("debugbox").innerHTML = data
   ws.send(data)  
 } 
 
@@ -77,7 +76,7 @@ function camhor(){
 }
 
 function camver(){
-  var payload = "c:ver" + document.getElementById("vers").value
+  var payload = "c:vert" + document.getElementById("vers").value
   sendData(payload)
 }
 

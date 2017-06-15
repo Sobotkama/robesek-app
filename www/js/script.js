@@ -18,7 +18,7 @@ var ws = new WebSocket("ws://" + ip + ":8000/")
 
 
 function sendData(data) {
-  ws.send(data)  
+  ws.send(data + "\n")
 } 
 
 function reload_img() {
@@ -71,12 +71,12 @@ function createnipple() {
 }
 
 function camhor(){
-  var payload = "c:hor" + document.getElementById("hors").value
+  var payload = "c:hor " + document.getElementById("hors").value
   sendData(payload)
 }
 
 function camver(){
-  var payload = "c:vert" + document.getElementById("vers").value
+  var payload = "c:vert " + document.getElementById("vers").value
   sendData(payload)
 }
 
